@@ -21,9 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let mouseX = 0, mouseY = 0;
     let animationId;
 
+    let lastWidth = window.innerWidth;
     function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        if (window.innerWidth !== lastWidth || canvas.width === 0) {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            lastWidth = window.innerWidth;
+        }
     }
 
     resizeCanvas();
@@ -85,14 +89,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Create particles
-    const particleCount = Math.min(60, Math.floor(window.innerWidth * 0.03));
+    const particleCount = Math.min(40, Math.floor(window.innerWidth * 0.02));
     for (let i = 0; i < particleCount; i++) {
         particles.push(new Particle());
     }
 
     function drawLines() {
         for (let i = 0; i < particles.length; i++) {
-            for (let j = i; j < particles.length; j++) {
+            for (let j = i + 1; j < particles.length; j++) {
                 let dx = particles[i].x - particles[j].x;
                 let dy = particles[i].y - particles[j].y;
                 let distance = Math.sqrt(dx * dx + dy * dy);
@@ -192,38 +196,46 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- ACTIVE NAV LINK ON SCROLL ---
     const sections = document.querySelectorAll('section');
 
+    let isScrollThrottled = false;
     window.addEventListener('scroll', () => {
-        let current = '';
-        const scrollY = window.pageYOffset;
+        if (isScrollThrottled) return;
+        isScrollThrottled = true;
 
-        sections.forEach(section => {
-            const sectionHeight = section.offsetHeight;
-            const sectionTop = section.offsetTop - 150;
+        setTimeout(() => {
+            let current = '';
+            const scrollY = window.pageYOffset;
 
-            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                current = section.getAttribute('id');
-            }
-        });
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 150;
 
-        desktopLinks.forEach(link => {
-            link.classList.remove('active');
-            const href = link.getAttribute('href');
-            if (href === '#' && (scrollY < 100 || !current)) {
-                link.classList.add('active');
-            } else if (href && !href.startsWith('http') && href.includes(current) && current) {
-                link.classList.add('active');
-            }
-        });
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
 
-        mobileLinks.forEach(link => {
-            link.classList.remove('active');
-            const href = link.getAttribute('href');
-            if (href === '#' && (scrollY < 100 || !current)) {
-                link.classList.add('active');
-            } else if (href && !href.startsWith('http') && href.includes(current) && current) {
-                link.classList.add('active');
-            }
-        });
+            desktopLinks.forEach(link => {
+                link.classList.remove('active');
+                const href = link.getAttribute('href');
+                if (href === '#' && (scrollY < 100 || !current)) {
+                    link.classList.add('active');
+                } else if (href && !href.startsWith('http') && href.includes(current) && current) {
+                    link.classList.add('active');
+                }
+            });
+
+            mobileLinks.forEach(link => {
+                link.classList.remove('active');
+                const href = link.getAttribute('href');
+                if (href === '#' && (scrollY < 100 || !current)) {
+                    link.classList.add('active');
+                } else if (href && !href.startsWith('http') && href.includes(current) && current) {
+                    link.classList.add('active');
+                }
+            });
+
+            isScrollThrottled = false;
+        }, 150);
     });
 
     // --- DYNAMIC YEAR IN FOOTER ---
