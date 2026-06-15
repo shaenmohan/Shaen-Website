@@ -3,7 +3,7 @@
    Particles, Scroll Animations, Interactions
    ============================================ */
 
-document.addEventListener('DOMContentLoaded', () => {
+const initWebsite = () => {
 
     // --- LOADER ---
     const loader = document.getElementById('loader');
@@ -245,4 +245,10 @@ document.addEventListener('DOMContentLoaded', () => {
         yearEl.textContent = `© ${year} SHAEN. ALL RIGHTS RESERVED.`;
     }
 
-});
+};
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initWebsite);
+} else {
+    initWebsite();
+}
