@@ -1,0 +1,39 @@
+<svg viewBox="0 0 400 440" xmlns="http://www.w3.org/2000/svg">
+  <!--
+    Custom brand S logo – bold geometric filled shape
+    matching the uploaded Shaen brand font.
+    Two interlocking segments forming the S with rounded outer corners.
+  -->
+
+  <!-- Top segment: wraps across the top and down the right side to center -->
+  <path d="
+    M 50,0
+    L 350,0
+    Q 400,0 400,50
+    L 400,260
+    L 300,260
+    L 300,100
+    L 100,100
+    L 100,170
+    L 0,170
+    L 0,50
+    Q 0,0 50,0
+    Z
+  " fill="#f0a030"/>
+
+  <!-- Bottom segment: wraps across the bottom and up the left side to center -->
+  <path d="
+    M 350,440
+    L 50,440
+    Q 0,440 0,390
+    L 0,180
+    L 100,180
+    L 100,340
+    L 300,340
+    L 300,270
+    L 400,270
+    L 400,390
+    Q 400,440 350,440
+    Z
+  " fill="#f0a030"/>
+</svg>

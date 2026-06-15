@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHAEN — Creative · Podcast · Visual Storytelling</title>
+    <meta name="description"
+        content="SHAEN is a creative platform blending visual storytelling, cinematic content, and raw conversations about culture, identity, and the human experience.">
+    <link rel="icon" type="image/png" href="assets/website%20favi.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@200;300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Ambient Particles Canvas -->
+    <canvas id="particles"></canvas>
+
+    <!-- Scan Line Overlay -->
+    <div class="scanlines"></div>
+
+    <!-- Loading Screen -->
+    <div class="loader" id="loader" style="background-color: #FFF9E9;">
+        <div class="loader-inner">
+            <div class="loader-logo-wrapper">
+                <img src="assets/S logo.png" alt="Shaen Logo" class="loader-logo-img" />
+            </div>
+            <div class="loader-bar">
+                <div class="loader-bar-fill"></div>
+            </div>
+            <div class="loader-text">INITIALIZING</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <div class="nav-logo">
+                <a href="#">
+                    <img src="assets/shaen_logo.png" alt="Shaen Logo" class="nav-logo-img" />
+                </a>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#" class="nav-link active">Home</a>
+                <a href="https://www.behance.net/gallery/233127925/Style-Storytelling-A-Visual-Journey" target="_blank" rel="noopener noreferrer" class="nav-link">Creative Work</a>
+                <a href="#podcast-soon" class="nav-link">Podcast</a>
+            </div>
+            <button class="nav-menu-btn" id="menuBtn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-inner">
+            <a href="#" class="mobile-link active">HOME</a>
+            <a href="https://www.behance.net/gallery/233127925/Style-Storytelling-A-Visual-Journey" target="_blank" rel="noopener noreferrer" class="mobile-link">CREATIVE WORK</a>
+            <a href="#podcast-soon" class="mobile-link">PODCAST</a>
+        </div>
+    </div>
+
+    <!-- ========================================
+         CREATIVE WORK SECTION
+         ======================================== -->
+    <section class="creative-section" id="creative">
+
+        <!-- Creative Hero -->
+        <div class="creative-hero">
+            <div class="creative-hero-bg">
+                <div class="creative-light-sweep"></div>
+            </div>
+            <div class="creative-hero-content">
+                <span class="creative-eyebrow">VISUAL PORTFOLIO</span>
+                <h1 class="creative-wordmark">Creative Work</h1>
+                <p class="creative-tagline">"Where creativity meets strategy — a space to craft visuals with impact, purpose, and vision for the future."</p>
+            </div>
+        </div>
+
+        <!-- Portfolio Link Section -->
+        <div class="creative-portfolio" style="padding-top: 40px; padding-bottom: clamp(100px, 12vw, 160px);">
+            <div class="container">
+                <!-- Behance CTA -->
+                <div class="creative-cta">
+                    <a href="https://www.behance.net/gallery/233127925/Style-Storytelling-A-Visual-Journey" target="_blank" rel="noopener noreferrer" class="behance-link" id="behanceLink">
+                        <span class="behance-link-text">View Full Portfolio on Behance</span>
+                        <span class="behance-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- PODCAST COMING SOON SECTION -->
+    <section class="podcast-soon" id="podcast-soon">
+        <div class="container">
+            <div class="section-header center">
+                <div class="section-label">
+                    <span class="label-num">01</span>
+                    <span class="label-line"></span>
+                    <span class="label-text">ANNOUNCEMENT</span>
+                </div>
+                <h2 class="section-title">Podcast<br><span class="accent">Coming Soon</span></h2>
+            </div>
+            <div class="podcast-coming-soon-wrapper">
+                <div class="podcast-image-container">
+                    <img src="shaen-portrait.jpg" alt="Podcast Coming Soon Placeholder"
+                        class="podcast-placeholder-img" />
+                    <div class="podcast-overlay">
+                        <div class="coming-soon-badge">IN PRODUCTION</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <img src="assets/Logo footer 3.png" alt="Shaen Logo" class="footer-logo-img" />
+                    <span class="footer-tagline">Creative · Visual Storytelling · Podcast</span>
+                </div>
+                <div class="footer-nav">
+                    <a href="#">Home</a>
+                    <a href="https://www.behance.net/gallery/233127925/Style-Storytelling-A-Visual-Journey" target="_blank" rel="noopener noreferrer">Creative Work</a>
+                    <a href="#podcast-soon">Podcast</a>
+                    <a href="https://www.behance.net/gallery/233127925/Style-Storytelling-A-Visual-Journey" target="_blank" rel="noopener noreferrer">Behance</a>
+                </div>
+                <div class="footer-copy">
+                    <span>© 2026 SHAEN. ALL RIGHTS RESERVED.</span>
+                    <span class="footer-coords">28.6139°N 77.2090°E</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

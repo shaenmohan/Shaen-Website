@@ -1,0 +1,12 @@
+<svg viewBox="-10 -10 340 96" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <!-- S - geometric blocky S with rounded corners -->
+  <path d="M 48 9 Q 48 2 41 2 L 11 2 Q 4 2 4 9 L 4 31 Q 4 38 11 38 L 41 38 Q 48 38 48 45 L 48 67 Q 48 74 41 74 L 11 74 Q 4 74 4 67" stroke="#f0a030" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- H -->
+  <path d="M 68 2 L 68 74 M 114 2 L 114 74 M 68 38 L 114 38" stroke="#f0a030" stroke-width="14" stroke-linecap="square"/>
+  <!-- A - SpaceX style, no crossbar, sharp peak -->
+  <path d="M 134 74 L 158 2 L 182 74" stroke="#f0a030" stroke-width="14" stroke-linecap="square" stroke-linejoin="miter"/>
+  <!-- E -->
+  <path d="M 202 2 L 202 74 M 202 2 L 240 2 M 202 38 L 234 38 M 202 74 L 240 74" stroke="#f0a030" stroke-width="14" stroke-linecap="square"/>
+  <!-- N -->
+  <path d="M 260 74 L 260 2 L 308 74 L 308 2" stroke="#f0a030" stroke-width="14" stroke-linecap="square" stroke-linejoin="miter"/>
+</svg>
