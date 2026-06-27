@@ -165,7 +165,7 @@ const initWebsite = () => {
 
     // --- SCROLL REVEAL ANIMATIONS ---
     const revealElements = document.querySelectorAll(
-        '.section-label, .section-title, .about-description, .podcast-image-container, .creative-hero-content, .creative-section-title, .creative-body, .masonry-item, .creative-pillar, .behance-link, .creative-tagline'
+        '.section-label, .section-title, .about-description, .podcast-image-container, .creative-hero-content, .creative-section-title, .creative-body, .masonry-item, .creative-pillar, .behance-link, .creative-tagline, .nike-header-content, .nike-block, .nike-flow-arrow'
     );
 
     // Initial state

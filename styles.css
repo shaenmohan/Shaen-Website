@@ -604,6 +604,450 @@ img {
 }
 
 /* ===========================================
+   NIKE AI SPEC COMMERCIAL — CASE STUDY
+   =========================================== */
+.nike-case-study {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    padding-bottom: clamp(60px, 8vw, 120px);
+}
+
+/* — Nike Header — */
+.nike-header {
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 120px;
+    padding-bottom: 40px;
+}
+
+.nike-header-bg {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 100% 70% at 50% 20%, rgba(240, 160, 48, 0.06) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 50% at 20% 80%, rgba(255, 106, 0, 0.03) 0%, transparent 60%),
+        var(--bg-primary);
+}
+
+.nike-light-sweep {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+            transparent 0%,
+            rgba(240, 160, 48, 0.015) 25%,
+            rgba(240, 160, 48, 0.04) 50%,
+            rgba(240, 160, 48, 0.015) 75%,
+            transparent 100%);
+    animation: nikeSweep 10s ease-in-out infinite alternate;
+}
+
+@keyframes nikeSweep {
+    0% {
+        opacity: 0.3;
+        transform: translateX(-5%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(5%);
+    }
+}
+
+.nike-header-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.nike-eyebrow {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: 11px;
+    letter-spacing: 0.5em;
+    color: var(--text-dim);
+    margin-bottom: 28px;
+}
+
+.nike-title {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 8vw, 90px);
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    line-height: 1.05;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--amber) 60%, var(--neon-orange) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    margin-bottom: 20px;
+}
+
+.nike-title-underline {
+    width: 60px;
+    height: 2px;
+    margin: 0 auto;
+    background: linear-gradient(90deg, transparent, var(--amber), transparent);
+    opacity: 0.6;
+}
+
+/* — Vertical Flow — */
+.nike-flow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+
+.nike-flow-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 0;
+    gap: 8px;
+}
+
+.flow-arrow-icon {
+    font-size: 20px;
+    color: var(--amber);
+    opacity: 0.5;
+    animation: arrowPulse 2.5s ease-in-out infinite;
+}
+
+.flow-arrow-line {
+    display: block;
+    width: 1px;
+    height: 30px;
+    background: linear-gradient(180deg, var(--amber-dim), transparent);
+}
+
+@keyframes arrowPulse {
+    0%, 100% { opacity: 0.3; transform: translateY(0); }
+    50% { opacity: 0.7; transform: translateY(4px); }
+}
+
+/* — Nike Block (shared) — */
+.nike-block {
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+}
+
+.nike-block-label {
+    font-family: var(--font-ui);
+    font-size: clamp(12px, 1.4vw, 15px);
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 20px;
+}
+
+.nike-block-sublabel {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    color: var(--text-dim);
+    margin-top: -12px;
+    margin-bottom: 24px;
+}
+
+/* — Hero Image — */
+.nike-image-showcase {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(240, 160, 48, 0.1);
+    box-shadow:
+        0 20px 80px rgba(0, 0, 0, 0.5),
+        0 0 60px rgba(240, 160, 48, 0.04);
+    transition: all 0.6s var(--ease-out-expo);
+}
+
+.nike-image-showcase:hover {
+    border-color: rgba(240, 160, 48, 0.2);
+    box-shadow:
+        0 30px 100px rgba(0, 0, 0, 0.6),
+        0 0 80px rgba(240, 160, 48, 0.06);
+    transform: translateY(-4px);
+}
+
+.nike-image-showcase img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.8s var(--ease-out-expo), filter 0.8s var(--ease-out-expo);
+}
+
+.nike-image-showcase:hover img {
+    transform: scale(1.02);
+}
+
+.nike-image-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 40% at 50% 100%, rgba(240, 160, 48, 0.08), transparent);
+    pointer-events: none;
+}
+
+/* — Video — */
+.nike-video-container {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(240, 160, 48, 0.12);
+    box-shadow:
+        0 20px 80px rgba(0, 0, 0, 0.5),
+        0 0 40px rgba(240, 160, 48, 0.04);
+    background: #000;
+}
+
+.nike-video-container video {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    background: #000;
+}
+
+.nike-video-frame {
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(240, 160, 48, 0.06);
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+/* — Creative Brief — */
+.nike-brief-card {
+    background: rgba(240, 160, 48, 0.02);
+    border: 1px solid rgba(240, 160, 48, 0.08);
+    border-radius: 8px;
+    padding: clamp(28px, 4vw, 48px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.5s var(--ease-out-expo);
+}
+
+.nike-brief-card:hover {
+    border-color: rgba(240, 160, 48, 0.18);
+    background: rgba(240, 160, 48, 0.035);
+}
+
+.nike-brief-text {
+    font-family: var(--font-body);
+    font-size: clamp(15px, 1.6vw, 19px);
+    font-weight: 300;
+    line-height: 1.9;
+    color: var(--text-secondary);
+    font-style: italic;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* — Roles Grid — */
+.nike-roles-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.nike-role-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: rgba(240, 160, 48, 0.03);
+    border: 1px solid rgba(240, 160, 48, 0.08);
+    border-radius: 6px;
+    transition: all 0.4s var(--ease-out-expo);
+}
+
+.nike-role-item:hover {
+    border-color: rgba(240, 160, 48, 0.25);
+    background: rgba(240, 160, 48, 0.06);
+    transform: translateY(-2px);
+}
+
+.nike-role-icon {
+    color: var(--amber);
+    font-size: 10px;
+    opacity: 0.6;
+}
+
+.nike-role-name {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: var(--text-primary);
+}
+
+/* — Tools Chips — */
+.nike-tools-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.nike-tool-chip {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    padding: 10px 24px;
+    border: 1px solid rgba(240, 160, 48, 0.12);
+    background: rgba(240, 160, 48, 0.03);
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: all 0.4s var(--ease-out-expo);
+}
+
+.nike-tool-chip:hover {
+    border-color: var(--amber);
+    color: var(--amber);
+    background: rgba(240, 160, 48, 0.08);
+    box-shadow: 0 0 20px rgba(240, 160, 48, 0.08);
+    transform: translateY(-2px);
+}
+
+/* — Behind the Scenes Gallery — */
+.nike-bts-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Center the last row (items 4 & 5) */
+.nike-bts-item:nth-child(4) {
+    grid-column: 1 / 2;
+}
+
+.nike-bts-item:nth-child(5) {
+    grid-column: 3 / 4;
+}
+
+.nike-bts-item {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    border: 1px solid rgba(240, 160, 48, 0.08);
+    overflow: hidden;
+    background: rgba(240, 160, 48, 0.015);
+    transition: all 0.6s var(--ease-out-expo);
+}
+
+.nike-bts-item:hover {
+    border-color: rgba(240, 160, 48, 0.25);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+    transform: translateY(-4px);
+}
+
+.nike-bts-caption {
+    padding: 18px 20px 14px;
+    text-align: left;
+}
+
+.nike-bts-caption h5 {
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 8px;
+}
+
+.nike-bts-caption p {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--text-dim);
+}
+
+.nike-bts-item img {
+    width: 100%;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+    filter: saturate(0.8) brightness(0.75) contrast(1.1);
+    transition: all 0.8s var(--ease-out-expo);
+}
+
+.nike-bts-item:hover img {
+    filter: saturate(1) brightness(0.9) contrast(1.05);
+    transform: scale(1.04);
+}
+
+/* — Prompt Process — */
+.nike-prompt-card {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.nike-prompt-step {
+    display: flex;
+    gap: 28px;
+    padding: 32px 0;
+    border-bottom: 1px solid rgba(240, 160, 48, 0.06);
+    align-items: flex-start;
+    transition: all 0.4s var(--ease-out-expo);
+}
+
+.nike-prompt-step:last-child {
+    border-bottom: none;
+}
+
+.nike-prompt-step:hover {
+    padding-left: 12px;
+}
+
+.nike-prompt-num {
+    font-family: var(--font-display);
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    color: var(--amber);
+    opacity: 0.25;
+    min-width: 50px;
+    line-height: 1;
+    padding-top: 4px;
+    transition: opacity 0.4s var(--ease-out-expo);
+}
+
+.nike-prompt-step:hover .nike-prompt-num {
+    opacity: 0.5;
+}
+
+.nike-prompt-detail h4 {
+    font-family: var(--font-display);
+    font-size: clamp(14px, 1.6vw, 18px);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.nike-prompt-detail p {
+    font-family: var(--font-body);
+    font-size: clamp(14px, 1.4vw, 16px);
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+/* ===========================================
    CREATIVE WORK SECTION
    =========================================== */
 .creative-section {
@@ -1190,6 +1634,47 @@ img {
         padding: 14px 28px;
         font-size: 12px;
     }
+
+    /* Nike Responsive */
+    .nike-header {
+        min-height: 35vh;
+        padding-top: 100px;
+    }
+
+    .nike-bts-gallery {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .nike-bts-item:nth-child(4),
+    .nike-bts-item:nth-child(5) {
+        grid-column: auto;
+    }
+
+    .nike-roles-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nike-role-item {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+
+    .nike-prompt-step {
+        flex-direction: column;
+        gap: 14px;
+        text-align: center;
+    }
+
+    .nike-prompt-detail {
+        text-align: left;
+    }
+
+    .nike-prompt-num {
+        min-width: unset;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1202,5 +1687,20 @@ img {
     .creative-pillars {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .nike-tools-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nike-tool-chip {
+        width: 100%;
+        max-width: 220px;
+        text-align: center;
+    }
+
+    .nike-flow-arrow {
+        padding: 16px 0;
     }
 }
